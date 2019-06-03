@@ -57,13 +57,14 @@ export default {
         // w = p.constrain(w, 0, 1);
         // this.pulse.width(w)
         p.background(250);
+
         p.rotateY(p.frameCount * (p.mouseX * 0.0001));
 
         for (let j = 0; j < 5; j++) {
           p.push();
-          for (let i = 0; i < 10; i++) {
+          for (let i = 0; i < (15 +(p.mouseX / 20)); i++) {
             p.translate(
-              p.sin(p.frameCount * 0.001 + j) * 200,
+              p.sin(p.frameCount * 0.001 + j) * 100,
               p.sin(p.frameCount * 0.001 + j) * 100,
               i * 0.25
             );
@@ -76,7 +77,7 @@ export default {
         }
   
         // map the mouseX to set frequency of the between 40 and 880 Hz
-        var freq = p.map(p.mouseX, 0, p.width, 20, 100);
+        var freq = p.map(p.mouseX, 0, p.width, 100, 500);
         this.osc.freq(freq);
         // p.ellipse(p.mouseX, 100, 32, 32);
         // p.sphere(p.mouseX, 8, 6);
