@@ -56,9 +56,8 @@ export default {
         // var w = p.map(p.mouseX, 0, p.width, 0, 1);
         // w = p.constrain(w, 0, 1);
         // this.pulse.width(w)
-
         p.background(250);
-        p.rotateY(p.frameCount * 0.01);
+        p.rotateY(p.frameCount * (p.mouseX * 0.0001));
 
         for (let j = 0; j < 5; j++) {
           p.push();
