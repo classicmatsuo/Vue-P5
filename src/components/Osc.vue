@@ -1,11 +1,7 @@
-<template>
-  <div id="osc"></div>
-</template>
-
 <script>
 import p5 from 'p5'
 
-
+// https://p5js.org/examples/3d-sine-cosine-in-3d.html sine cosine 3d
 var s = function( sketch ) {
 
   sketch.setup = function() {

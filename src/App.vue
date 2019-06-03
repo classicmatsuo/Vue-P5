@@ -1,20 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Osc msg="Osc staging"></Osc>
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <!-- <Osc msg="Osc staging"/>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Test/> -->
+    <Test2/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Osc from './components/Osc.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+// import Osc from './components/Osc.vue'
+// import Test from './components/Test.vue'
+import Test2 from './components/Test2.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
-    Osc
+    // HelloWorld,
+    // Osc,
+    // Test,
+    Test2
   }
 }
 </script>
