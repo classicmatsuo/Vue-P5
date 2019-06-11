@@ -4,7 +4,8 @@
     <!-- <Osc msg="Osc staging"/>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <Test/> -->
-    <Test2/>
+    <!-- <Test2/> -->
+    <Test3/>
   </div>
 </template>
 
@@ -12,7 +13,8 @@
 // import HelloWorld from './components/HelloWorld.vue'
 // import Osc from './components/Osc.vue'
 // import Test from './components/Test.vue'
-import Test2 from './components/Test2.vue'
+// import Test2 from './components/Test2.vue'
+import Test3 from './components/Test3.vue'
 
 export default {
   name: 'app',
@@ -20,7 +22,8 @@ export default {
     // HelloWorld,
     // Osc,
     // Test,
-    Test2
+    // Test2,
+    Test3
   }
 }
 </script>
