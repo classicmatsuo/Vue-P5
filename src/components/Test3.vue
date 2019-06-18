@@ -92,6 +92,4 @@ var s = function( sketch ) {
   }
 }
 new p5(s)
-
-
 </script>
