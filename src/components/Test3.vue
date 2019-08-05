@@ -6,11 +6,23 @@
 <script>
 var s = function( sketch ) {
   var freqSlider, freqLabel, ampLabel, ampSlider, button;
-  var osc;
+  // var osc;
   var freq = 220;
   var amp = 0.2;
 
   var oscOn = false;
+
+  // Turn the oscillator on / off
+  sketch.toggleOsc = function() {
+    if (oscOn) {
+      sketch.osc.stop();
+      button.html('start');
+    } else {
+      sketch.osc.start();
+      button.html('stop');
+    }
+    oscOn = !oscOn;
+  }
 
   sketch.setup = function() {
 
@@ -32,7 +44,6 @@ var s = function( sketch ) {
     // Instantiate a Sine Wave Oscillator
     this.osc = new p5.SinOsc();
     this.osc.amp(amp);
-    
   };
 
   sketch.draw = function() {
@@ -49,26 +60,25 @@ var s = function( sketch ) {
     sketch.ambientLight(200);
     sketch.directionalLight(200, 150, 150, 0.25, 0.25, 0);
 
-    for (let j = 0; j < 5; j++) {
-      sketch.push();
-      for (let i = 0; i < (15 +(freq / 20)); i++) {
-        sketch.translate(
-          sketch.sin(sketch.frameCount * 0.001 + j) * 100,
-          sketch.sin(sketch.frameCount * 0.001 + j) * 100,
-          i * 0.25
-        );
-        sketch.rotateZ(sketch.frameCount * 0.002);
+    function animationStart(){
+      for (let j = 0; j < 5; j++) {
         sketch.push();
-        // sketch.noStroke();
-        // sketch.fill(66, 244, 244);
-        sketch.normalMaterial();
-        // sketch.sphere(5 + (amp * 10), 7, 6);
-        // sketch.specularMaterial(250);
-        sketch.torus(10 + (amp * 10), 5 + (amp * 4));
+        for (let i = 0; i < (15 +(freq / 20)); i++) {
+          sketch.translate(
+            sketch.sin(sketch.frameCount * 0.001 + j) * 100,
+            sketch.sin(sketch.frameCount * 0.001 + j) * 100,
+            i * 0.25
+          );
+          sketch.rotateZ(sketch.frameCount * 0.002);
+          sketch.push();
+          sketch.normalMaterial();
+          sketch.torus(10 + (amp * 10), 5 + (amp * 4));
+          sketch.pop();
+        }
         sketch.pop();
       }
-      sketch.pop();
     }
+    animationStart();
   
     // set frequency of the between 40 and 880 Hz
     freq = freqSlider.value();
@@ -79,17 +89,8 @@ var s = function( sketch ) {
     sketch.osc.amp(amp);
     ampLabel.html('Amplitude: ' + amp + '/ 1.0');
   };
-  // Turn the oscillator on / off
-  sketch.toggleOsc = function() {
-    if (oscOn) {
-      sketch.osc.stop();
-      button.html('start');
-    } else {
-      sketch.osc.start();
-      button.html('stop');
-    }
-    oscOn = !oscOn;
-  }
+  
 }
-new p5(s)
+// const p5 = require('p5');
+new p5(s);
 </script>

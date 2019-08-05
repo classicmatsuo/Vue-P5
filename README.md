@@ -1,4 +1,6 @@
 # oscillator
+![ring](https://raw.githubusercontent.com/classicmatsuo/Vue-P5/tree/master/src/assets/ring.png)
+
 
 ## Project setup
 ```
