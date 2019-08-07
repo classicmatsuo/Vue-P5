@@ -1,5 +1,5 @@
 # oscillator
-![ring](https://raw.githubusercontent.com/classicmatsuo/Vue-P5/master/src/assets/ring.png)
+![oscillator gif](https://raw.githubusercontent.com/classicmatsuo/Vue-P5/master/src/assets/p5.gif)
 
 
 ## Project setup
